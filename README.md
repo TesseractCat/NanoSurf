@@ -14,7 +14,7 @@ PROPERTY(sampler2d _Texture)
 
 PASS(ALL)
     #include "Something.cginc"
-    float do_something() { return 0; }
+    float do_something() { return _Property; }
 ENDPASS()
 
 PASS()
