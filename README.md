@@ -8,6 +8,7 @@ A small surface shader implementation for URP.
 SHADER(Shader Name)
 TYPE({Lit, Unlit, Decal})
 
+PROPERTY(float3 _Color)
 PROPERTY(float _Property)
 PROPERTY(sampler2d _Texture)
 
