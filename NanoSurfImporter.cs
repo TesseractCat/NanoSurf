@@ -201,7 +201,7 @@ public class NanoSurfImporter : ScriptedImporter
         string shaderText = File.ReadAllText(ctx.assetPath, Encoding.UTF8);
         NanoSurfShader nanoSurfShader = new NanoSurfShader(shaderText);
 
-        string templateGraphPath = Directory.GetCurrentDirectory() + $"\\Packages\\com.tess.nanosurf\\{nanoSurfShader.type}Template.shader";
+        string templateGraphPath = Directory.GetCurrentDirectory() + $"\\Packages\\com.tess.nanosurf\\Templates\\{nanoSurfShader.type}Template.shader";
         string templateGraphText = File.ReadAllText(templateGraphPath, Encoding.UTF8);
 
         Shader shader = ShaderUtil.CreateShaderAsset(ctx, nanoSurfShader.Compile(templateGraphText), true);
