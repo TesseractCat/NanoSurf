@@ -10,10 +10,10 @@ using UnityEngine;
 
 using UnityEditor;
 using UnityEditor.AssetImporters;
-using UnityEditor.Graphing.Util;
-using UnityEditor.ShaderGraph;
-using UnityEditor.ShaderGraph.Internal;
-using UnityEditor.ShaderGraph.Serialization;
+// using UnityEditor.Graphing.Util;
+// using UnityEditor.ShaderGraph;
+// using UnityEditor.ShaderGraph.Internal;
+// using UnityEditor.ShaderGraph.Serialization;
 
 class NanoSurfShader {
     string text;
@@ -201,7 +201,7 @@ public class NanoSurfImporter : ScriptedImporter
         string shaderText = File.ReadAllText(ctx.assetPath, Encoding.UTF8);
         NanoSurfShader nanoSurfShader = new NanoSurfShader(shaderText);
 
-        string templateGraphPath = Directory.GetCurrentDirectory() + $"\\Assets\\NanoSurf\\{nanoSurfShader.type}Template.shader";
+        string templateGraphPath = Directory.GetCurrentDirectory() + $"\\Packages\\com.tess.nanosurf\\{nanoSurfShader.type}Template.shader";
         string templateGraphText = File.ReadAllText(templateGraphPath, Encoding.UTF8);
 
         Shader shader = ShaderUtil.CreateShaderAsset(ctx, nanoSurfShader.Compile(templateGraphText), true);
@@ -211,7 +211,7 @@ public class NanoSurfImporter : ScriptedImporter
 
     [MenuItem("Assets/Create/NanoSurf Shader")]
     static void CreateNanoSurfShader(MenuCommand menuCommand) {
-        ProjectWindowUtil.CreateScriptAssetFromTemplateFile(Directory.GetCurrentDirectory() + "\\Assets\\NanoSurf\\Default.ns", "Untitled.ns");
+        ProjectWindowUtil.CreateScriptAssetFromTemplateFile(Directory.GetCurrentDirectory() + "\\Packages\\com.tess.nanosurf\\Default.ns", "Untitled.ns");
     }
 
     //TODO: https://github.com/bzgeb/CustomForwardPassLightingShaderGraph/blob/master/Assets/CustomForwardPass/Editor/ShaderGraphConversionTool.cs

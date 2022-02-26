@@ -1,0 +1,6 @@
+{
+    "name":"com.tess.nanosurf",
+    "displayName":"NanoSurf",
+    "version":"0.1.0",
+    "description":"Small surface shader codegen for URP"
+}
