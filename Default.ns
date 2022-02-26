@@ -1,0 +1,15 @@
+SHADER(Custom/Untitled)
+TYPE(Lit)
+
+PROPERTY(float4 _Color)
+
+PASS()
+    void ns_vert(NS_VERT_PARAMS) {
+        // Your vertex shader code goes here
+    }
+
+    void ns_frag(NS_FRAG_PARAMS) {
+        // Your fragment shader code goes here
+        color = _Color;
+    }
+ENDPASS()
